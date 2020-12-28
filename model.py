@@ -17,12 +17,12 @@ class GenreClassifier:
     def predict_genre(self, text):
         pred = self.predict(text)
         pred_genres = [[name for name, el in zip(self.genres, list(y)) if el == 1] for y in pred]
+        if not pred_genres[0]:
+            pred_genres[0] = ['too few words :(']
         return pred_genres
 
 
 if __name__ == '__main__':
     clf = GenreClassifier()
     # print(clf.genres)
-    print(clf.predict_genre("All these protocols and procedures to make it seem "
-                            "like you have it under control. But you're a bunch of boys "
-                            "making models out of balsa wood. You don't have anything under control!"))
+    print(clf.predict_genre("All!"))

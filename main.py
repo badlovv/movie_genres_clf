@@ -6,10 +6,10 @@ genres_clf = GenreClassifier()
 
 st.title('Classify your text into movie genre!')
 st.markdown('''
-
+Please, don't use small texts. Small texts might not be recognized.
 ''')
 text = st.text_area(label='Type in some dialogue from a movie.',
-                      value="All these protocols and procedures to make it seem "
+                    value="All these protocols and procedures to make it seem "
                             "like you have it under control. But you're a bunch of boys "
                             "making models out of balsa wood. You don't have anything under control!")
 
